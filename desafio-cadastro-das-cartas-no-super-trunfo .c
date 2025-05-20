@@ -1,132 +1,77 @@
 #include <stdio.h>
 
-int main (){
+// Desafio Super Trunfo - Países
+// Tema 1 - Cadastro das Cartas
+// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
+// Siga os comentários para implementar cada parte do desafio.
+//Teste larissa
 
-char Estado1[40] ,cidade1[40] ;
-int Populaçao1, Codigo1 ,Turisticos1 ;
-float Pib1 ,area1 ,Densidade ,Capita ;
-printf ("Carta 1\n");
+int main() {
+    char Estado[20];
+char cidade[20]; 
+int codigo;
+int habitantes;
+float area;
+float pib;
+int turisticos;
 
-printf("Digite o Estado De Sua carta\n");
-fgets(Estado1, sizeof(Estado1), stdin);
+char Estado2[20];
+char cidade2[20]; 
+int codigo2;
+int habitantes2;
+float area2;
+float pib2;
+int turisticos2;
+printf("Bem vindo ao jogo das Cartas\n");
 
-printf("Digite agr a cidade da sua carta\n");
-fgets(cidade1, sizeof(cidade1), stdin);
+printf ("digite  um estado. \n");
+fgets(Estado,sizeof(Estado),stdin);
 
-printf("Digite o Codigo de sua carta\n");
-scanf(" %d", &Codigo1);
+printf ("Digite uma Cidade. \n");
+fgets (cidade,sizeof(cidade), stdin);
 
-printf("Digite a Populaçao dessa cidade\n");
-scanf(" %d", &Populaçao1);
+printf("Digite uma numeração. \n");
+scanf("%d", &codigo);
 
-printf("Digite a Area\n");
-scanf(" %f", &area1);
+printf("Digite o numero de Habitantes dessa cidade. \n");
+scanf("%d", &habitantes );
 
-printf("Digite o Pib \n");
-scanf(" %f", &Pib1);
-printf("Quantos pontos turisticos essa cidade tem\n");
-scanf(" %d", &Turisticos1);
+printf("Digite Area dessa cidade Em Km \n");
+scanf("%f", &area);
 
-Densidade = (float)Populaçao1/area1;
-Capita = (float)Pib1/Populaçao1;
+printf("Digite o Pib dessa cidade.\n");
+scanf("%f", &pib);
 
-printf("|Codigo - %.1s0%d\n|Estado - %s|Cidade - %s|Habitantes - %d\n|Area - %.2f\n",Estado1 ,Codigo1 ,Estado1 ,cidade1 ,Populaçao1 ,area1 );
-printf("|Pontos Turisticos - %d\n|Densidade Populacional - %.4f Hab.Km2 \n|Pib per Capita - %f Reais\n \n",Turisticos1 ,Densidade, Capita);  
+printf("Digite a quantidade de pontos turisticos.\n");
+scanf("%d", &turisticos);
 
-getchar();
+printf("|Codigo da Carta - %.1s0%d| \n|Estado - %s|\n|Cidade - %s|\n|Numeros de Habitante -%d|\n|Area dessa cidade - %.2f Km|\n|Pib - %.2f Bilhoes|\n|Quantidade de pontos turisticos - %d|", Estado , codigo , Estado , cidade, habitantes, area, pib, turisticos );
 
-char Estado2[40] ,cidade2[40];
-int Populaçao2 ,Codigo2 ,Turisticos2;
-float area2 ,Pib2, Densidade2 ,Capita2;
+printf ("Digite outro  estado. \n");
+fgets(Estado2,sizeof(Estado2),stdin);
 
-printf ("Carta 2\n");
+printf ("Digite outra Cidade. \n");
+fgets (cidade2,sizeof(cidade2), stdin);
 
-getchar();
+printf("Digite outra numeração. \n");
+scanf("%d", &codigo2);
 
-printf("Digite o Estado De sua segunda carta\n");
-fgets(Estado2, sizeof(Estado2), stdin);
+printf("Digite o numero de Habitantes dessa cidade. \n");
+scanf("%d", &habitantes2 );
 
-printf("Digite agr a cidade da sua carta\n");
-fgets(cidade2, sizeof(cidade2), stdin);
+printf("Digite Area dessa cidade Em Km \n");
+scanf("%f", &area2);
 
+printf("Digite o Pib dessa cidade.\n");
+scanf("%f", &pib2);
 
+printf("Digite a quantidade de pontos turisticos.\n");
+scanf("%d", &turisticos2);
 
-printf("Digite o Codigo de sua carta\n");
-scanf(" %d", &Codigo2);
+printf("Segunda Carta \n|Codigo da Carta - %.1s0%d| \n|Estado - %s|\n|Cidade - %s|\n|Numeros de Habitante -%d|\n|Area dessa cidade - %.2f Km|\n|Pib - %.2f Bilhoes|\n|Quantidade de pontos turisticos - %d|", Estado2 , codigo2 , Estado2 , cidade2, habitantes2, area2, pib2, turisticos2 );
 
-printf("Digite a Populaçao dessa cidade\n");
-scanf(" %d", &Populaçao2);
-
-printf("Digite a Area\n");
-scanf(" %f", &area2);
-
-printf("Digite o Pib \n");
-scanf(" %f", &Pib2);
-printf("Quantos pontos turisticos essa cidade tem\n");
-scanf(" %d", &Turisticos2);
-
-Densidade2 = (float)Populaçao2/area2;
-Capita2 = (float)Pib2/Populaçao2;
-printf("|Codigo - %.1s0%d\n|Estado - %s|Cidade - %s|Habitantes - %d\n|Area - %.2f\n|Pontos Turisticos - %d\n|Densidade Populacional - %.4f Hab.Km2\n|Pib per Capita - %.2f Reais\n\n",Estado2 ,Codigo2 ,Estado2 ,cidade2 ,Populaçao2 ,area2 ,Turisticos2 ,Densidade2 ,Capita2);
-
-printf("\nMuito Obrigado Por utilizar o Meu codigo ");
-int Superpoder = ((float)Populaçao1+area1+Pib1+Capita+(1/Densidade)+Turisticos1) > (Populaçao2+area2+Pib2+Capita2+(1/Densidade2)+Turisticos2);
-
-if (Populaçao1>Populaçao2)
-{
-    printf("A cidade de %s ganhou em populaçao \n",cidade1);
-}
-else
-{
-    printf("A Cidade %s ganhou em populuçao \n",cidade2);
-}
-if (area1>area2)
-{
-    printf("A cidade de %s ganhou em area \n",cidade1);
-}
-else
-{
-    printf("A Cidade %s ganhou em area \n",cidade2);
-}
-if (Pib1>Pib2)
-{
-    printf("A cidade de %s ganhou no pib\n",cidade1);
-}
-else
-{
-    printf("A Cidade %s ganhou no pib \n",cidade2);
-}
-if (Capita>Capita2)
-{
-    printf("A cidade de %s ganhou em pib por capita\n",cidade1);
-}
-else
-{
-    printf("A Cidade %s ganhou em pib por capita\n",cidade2);
-}
-if (Turisticos1>Turisticos2)
-{
-    printf("A cidade de %s ganhou em quantidade de pontos turisticos \n",cidade1);
-}
-else
-{
-    printf("A Cidade %s ganhou em quantidade de pontos turisticos \n",cidade2);
-}
-if (Densidade>Densidade2)
-{
-    printf("A cidade de %s ganhou em densidade populacional\n",cidade1);
-}
-else
-{
-    printf("A Cidade %s ganhou em densidade populacional \n",cidade2);
-}
+printf("Muito obrigado");
 
 
-
-
-
-
-
-
-
+    return 0;
 }
